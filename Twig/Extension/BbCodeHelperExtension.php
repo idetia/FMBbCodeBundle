@@ -93,10 +93,16 @@ class BbCodeHelperExtension extends \Twig_Extension {
 	 * @return array Remaining entries of {@code $value} after removing the entries of {@code $without}.
 	 */
 	public function BBCode($value, $locale = null) {
+        
+        // skip if $value is a empty string
+        if ('' == $value) {
+            return '';
+        }
+        
 		if (!is_string($value)) {
 			throw new \Twig_Error_Runtime('The filter can be applied to strings only.');
 		}
-
+        
 		$code = new Decoda($value);
         
         if (empty($locale)) {
@@ -107,11 +113,11 @@ class BbCodeHelperExtension extends \Twig_Extension {
                 
             // apply locale defined in the configuration
             } else {
-                
-                // apply locale from the template
                 $code->setLocale($this->locale);
             }
         } else {
+            
+            // apply locale from the template
             $code->setLocale($locale);
         }
         
