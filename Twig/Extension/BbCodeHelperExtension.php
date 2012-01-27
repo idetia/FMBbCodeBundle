@@ -138,7 +138,7 @@ class BbCodeHelperExtension extends \Twig_Extension {
         if ($this->list=='enabled')
             $code->addFilter(new \ListFilter());
         if ($this->quote=='enabled')
-            $code->addFilter(new \QuoteFilter());
+            $code->addFilter(new \FM\BbCodeBundle\Decoda\Filter\QuoteFilter());
         if ($this->text=='enabled')
             $code->addFilter(new \TextFilter());
         if ($this->url=='enabled')
