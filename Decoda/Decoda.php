@@ -31,4 +31,8 @@ class Decoda extends BaseDecoda{
             $this->_messages = $messages;
         }
     }
+    
+	public function _loadFile($class) {
+        parent::_loadFile($class);
+	}    
 }
