@@ -12,7 +12,7 @@ class Decoda extends BaseDecoda{
      * {@inheritDoc}
      */
 	public function __construct($string = '', $messages = array()) {
-		spl_autoload_register(array($this, '_loadFile'));
+		spl_autoload_register(array($this, 'loadFile'));
 		
 		$this->setMessages($messages);
 		$this->reset($string, true);
@@ -30,9 +30,5 @@ class Decoda extends BaseDecoda{
         } else {
             $this->_messages = $messages;
         }
-    }
-    
-	public function _loadFile($class) {
-        parent::_loadFile($class);
-	}    
+    }    
 }
