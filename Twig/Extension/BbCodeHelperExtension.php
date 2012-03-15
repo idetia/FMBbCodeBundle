@@ -128,7 +128,7 @@ class BbCodeHelperExtension extends \Twig_Extension {
         if ($this->default=='enabled')
             $code->addFilter(new \DefaultFilter());
         if ($this->block=='enabled')
-            $code->addFilter(new \BlockFilter());
+            $code->addFilter(new \FM\BbCodeBundle\Decoda\Filter\BlockFilter());
         if ($this->code=='enabled')
             $code->addFilter(new \CodeFilter());
         if ($this->email=='enabled')
@@ -144,7 +144,7 @@ class BbCodeHelperExtension extends \Twig_Extension {
         if ($this->url=='enabled')
             $code->addFilter(new \UrlFilter());
         if ($this->video=='enabled')
-            $code->addFilter(new \VideoFilter());
+            $code->addFilter(new \FM\BbCodeBundle\Decoda\Filter\VideoFilter());
 
 		return $code->parse(true);
 	}
