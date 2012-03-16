@@ -23,7 +23,7 @@ class QuoteFilter extends \DecodaFilter {
 			'map' => array(
 				'default' => 'author'
 			),
-			'maxChildDepth' => 2
+			'maxChildDepth' => 6
 		)
 	);
 
