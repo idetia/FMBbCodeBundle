@@ -146,7 +146,7 @@ class BbCodeHelperExtension extends \Twig_Extension {
         if ($this->video=='enabled')
             $code->addFilter(new \FM\BbCodeBundle\Decoda\Filter\VideoFilter());
 
-		return $code->parse(true);
+		return $code->parse(false);
 	}
 
 } 
